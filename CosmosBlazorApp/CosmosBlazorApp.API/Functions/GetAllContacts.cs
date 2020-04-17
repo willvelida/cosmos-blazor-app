@@ -36,7 +36,7 @@ namespace CosmosBlazorApp.API.Functions
 
         [FunctionName(nameof(GetAllContacts))]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Contacts")] HttpRequest req)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "Contacts")] HttpRequest req)
         {
             IActionResult result = null;
             string continuationToken = null;
